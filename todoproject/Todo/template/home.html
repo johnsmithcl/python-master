@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text">
+                    <h1>TODO</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+
+<form method="post">
+  {% csrf_token %}
+<div class="form-group">
+<input type="text" name="n1" placeholder="enter task name">
+</div>
+<div class="form-group">
+<input type="number" name="n2" placeholder="enter the priority">
+</div>
+<div class="form-group">
+<input type="date" name="n3" placeholder="">
+</div>
+<input type="submit" value="Enter" class="btn btn-success">
+</form>
+            </div>
+        </div>
+
+<div class="col-md-6">
+    {% for i in show %}
+    <div class="form-group">
+    <div class="card shadow">
+        <div class="body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p>{{i.priority}}</p>
+            <p>{{i.date}}</p>
+            <a class="btn btn-danger" href="{% url 'app1:delete' i.id %}">Delete</a>
+            <a class="btn btn-success" href="{% url 'app1:update' i.id %}">update</a>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

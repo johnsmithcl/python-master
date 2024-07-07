@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="col-md-6">
+    <div class="form-group">
+    <div class="card shadow">
+        <div class="body">
+            <div class="card-title"><h2>Update</h2></div>
+              <form method="post" >
+                  {% csrf_token %}
+                  {{form.as_p}}
+                  <input type="submit" value="update">
+              </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+.banner{
+background-color:#8FBC8F;
+height:200px;
+width:100%;
+margin-bottom:70px
+}
+
+.banner-text{
+ top:10%;
+ left:45%;
+ position:absolute;
+ transform:transform;
+
+}

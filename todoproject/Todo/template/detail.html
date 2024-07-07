@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+
+    <div class="form-group">
+    <div class="card shadow">
+        <div class="body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p>{{i.priority}}</p>
+            <p>{{i.date}}</p>
+            <a class="btn btn-danger" href="{% url 'app1:delete' i.id %}">Delete</a>
+            <a class="btn btn-success" href="{% url 'app1:update' i.id %}">update</a>
+        </div>
+        </div>
+    </div>
+
+
+{% endblock %}
